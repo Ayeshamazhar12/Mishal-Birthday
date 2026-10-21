@@ -1,0 +1,108 @@
+/* ===== Sister.exe — style.css ===== */
+/* 1. Theme variables */
+:root{--pink:#FFB6D9;--lav:#CDB4FF;--peach:#FFC6A8;--butter:#FFF0A8;--plum:#54265E;--white:#fff;
+--display:'Baloo 2','Trebuchet MS',sans-serif;--script:'Pacifico',cursive;--body:'Poppins',system-ui,sans-serif;--r:24px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--plum);line-height:1.6;overflow-x:hidden;
+background:linear-gradient(160deg,var(--pink),var(--lav) 45%,var(--peach) 80%,var(--butter));background-attachment:fixed}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;padding:8px;z-index:99}
+:focus-visible{outline:3px solid var(--plum);outline-offset:3px}
+#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+#floaters{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.floater{position:absolute;bottom:-60px;animation:rise linear infinite;opacity:.8}
+@keyframes rise{to{transform:translateY(-115vh) rotate(25deg)}}
+
+/* 2. Layout + shared pieces */
+.section{position:relative;z-index:2;min-height:70vh;padding:72px 18px;display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
+.section[hidden],#surprise[hidden]{display:none}
+h2{font-family:var(--display);font-size:clamp(1.8rem,5vw,3rem);font-weight:800}
+.glass{background:rgba(255,255,255,.45);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.7);border-radius:var(--r);box-shadow:0 12px 40px rgba(84,38,94,.18);padding:26px;max-width:720px;width:100%}
+.glow-btn{font:600 1rem var(--body);color:#fff;background:linear-gradient(135deg,var(--plum),#8d3fa0);border:0;border-radius:999px;padding:14px 26px;cursor:pointer;box-shadow:0 0 18px rgba(205,180,255,.9);transition:transform .2s,box-shadow .2s}
+.glow-btn:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 0 30px var(--pink)}
+.glow-btn.alt{background:#fff;color:var(--plum)}
+.glow-btn.small{position:fixed;top:12px;right:12px;z-index:60;padding:9px 16px;font-size:.85rem}
+.btn-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.hint{font-size:.9rem;opacity:.85}
+.reveal{animation:pop .8s cubic-bezier(.2,1.4,.4,1) both}
+@keyframes pop{from{opacity:0;transform:translateY(40px) scale(.9)}}
+
+/* 3. Hero */
+.hero{min-height:100vh}
+.breaking{font:800 1.3rem var(--display);background:#d62855;color:#fff;padding:4px 18px;border-radius:8px;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.55}}
+.headline{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,9vw,6rem);line-height:1.05;background:linear-gradient(90deg,var(--plum),#c13b8c,var(--plum));background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite}
+@keyframes shine{to{background-position:200% 0}}
+.sub{max-width:620px;font-size:1.15rem}
+.name{font:clamp(3rem,13vw,8rem) var(--script);color:#fff;text-shadow:0 0 25px var(--plum),4px 4px 0 var(--plum);animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px) rotate(-2deg)}}
+.fab-msg{min-height:1.6em;font-weight:600}
+#fabBtn.run{position:fixed;z-index:70;transition:left .25s,top .25s}
+
+/* 4. Roast cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;width:100%;max-width:980px}
+.card{background:rgba(255,255,255,.55);backdrop-filter:blur(10px);border-radius:var(--r);padding:24px 16px;box-shadow:0 10px 30px rgba(84,38,94,.15);transition:transform .3s}
+.card:hover{transform:rotate(-2deg) scale(1.05)}
+.emo{font-size:2.6rem;display:block;animation:float 2.5s ease-in-out infinite}
+.card h3{font-family:var(--display);font-size:1.15rem}
+.score{font:800 1.5rem var(--display);color:#c13b8c}
+.stamp{border:3px dashed var(--plum);padding:8px 18px;border-radius:12px;transform:rotate(-3deg);font-weight:600;background:var(--butter)}
+
+/* 5. Cake (CSS layered 3D look) */
+.cake{position:relative;width:260px;height:260px;margin-top:40px}
+.tier{position:absolute;left:50%;transform:translateX(-50%);border-radius:18px 18px 10px 10px;box-shadow:inset 0 -10px 0 rgba(0,0,0,.08),0 8px 14px rgba(84,38,94,.25)}
+.t1{bottom:14px;width:260px;height:80px;background:linear-gradient(var(--pink),#ff8fc3)}
+.t2{bottom:94px;width:190px;height:70px;background:linear-gradient(var(--lav),#b394f5)}
+.t3{bottom:164px;width:120px;height:60px;background:linear-gradient(var(--peach),#ffa97f)}
+.tier::before{content:"";position:absolute;inset:0 0 auto;height:16px;border-radius:18px 18px 40% 40%;background:#fff}
+.plate{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:300px;height:16px;border-radius:50%;background:#fff;box-shadow:0 6px 12px rgba(84,38,94,.25)}
+.candles{position:absolute;bottom:224px;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:3}
+.candle{width:12px;height:48px;border-radius:4px;background:repeating-linear-gradient(45deg,#fff,#fff 6px,var(--pink) 6px,var(--pink) 12px);position:relative;cursor:pointer;border:0;padding:0}
+.candle i{position:absolute;top:-24px;left:-2px;width:16px;height:24px;border-radius:50% 50% 50% 50%/70% 70% 30% 30%;background:radial-gradient(var(--butter),#ff9a3c);box-shadow:0 0 18px 6px rgba(255,200,80,.8);animation:flick .3s infinite alternate;transform-origin:bottom}
+.candle:not(.lit) i{display:none}
+.candle:not(.lit)::after{content:"💨";position:absolute;top:-34px;left:-4px;animation:smoke 1.2s forwards}
+@keyframes flick{to{transform:scale(1.1,.9) rotate(4deg)}}
+@keyframes smoke{to{opacity:0;transform:translateY(-30px)}}
+.wish{font:1.4rem var(--display);font-weight:800;min-height:2em}
+.glowing{filter:drop-shadow(0 0 22px var(--butter))}
+.mini{transform:scale(.8);margin-top:20px}
+
+/* 6. Quiz */
+.quiz h3{font-family:var(--display);font-size:1.5rem;margin-bottom:14px}
+.opts{display:grid;gap:10px}
+.opt{font:600 1rem var(--body);padding:12px;border-radius:16px;border:2px solid var(--plum);background:#fff;color:var(--plum);cursor:pointer;transition:.2s}
+.opt:hover{background:var(--butter);transform:scale(1.03) rotate(-1deg)}
+.bar{height:8px;background:rgba(84,38,94,.2);border-radius:9px;margin-bottom:14px;overflow:hidden}.bar b{display:block;height:100%;background:var(--plum);transition:width .4s}
+.big{font-size:3rem}
+
+/* 7. Gift */
+.gift{position:relative;width:180px;height:180px}
+.box{position:absolute;bottom:0;width:180px;height:110px;background:var(--pink);border-radius:8px;box-shadow:0 10px 20px rgba(84,38,94,.3)}
+.box::before,.lid::before{content:"";position:absolute;left:50%;width:26px;height:100%;transform:translateX(-50%);background:var(--butter)}
+.lid{position:absolute;bottom:100px;width:196px;left:-8px;height:42px;background:var(--lav);border-radius:8px;transform-origin:left bottom;transition:transform .8s cubic-bezier(.3,1.6,.5,1);animation:shake 1.6s infinite}
+.gift.open .lid{transform:rotate(-70deg) translateY(-20px);animation:none}
+@keyframes shake{0%,90%,100%{transform:rotate(0)}93%{transform:rotate(-3deg)}96%{transform:rotate(3deg)}}
+.prize{position:absolute;left:50%;bottom:60px;transform:translateX(-50%) scale(0);width:min(88vw,420px);font:800 1.3rem var(--display);background:#fff;border-radius:18px;padding:14px;box-shadow:0 8px 24px rgba(84,38,94,.3);transition:.6s .3s;z-index:4}
+.gift.open .prize{transform:translateX(-50%) translateY(-120px) scale(1)}
+#giftSec{min-height:90vh;gap:30px}
+
+/* 8. Gallery */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;width:100%;max-width:1000px}
+.photo{background:#fff;border-radius:var(--r);padding:12px 12px 16px;box-shadow:0 10px 26px rgba(84,38,94,.2);transition:transform .3s;margin:0}
+.photo:nth-child(odd){transform:rotate(-2deg)}.photo:nth-child(even){transform:rotate(2deg)}
+.photo:hover{transform:rotate(0) scale(1.06);z-index:5}
+.photo img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;display:block}
+.photo figcaption{margin-top:10px;font-weight:600;font-size:.95rem}
+
+/* 9. Emotional section */
+.soft{background:linear-gradient(180deg,transparent,rgba(255,182,217,.7),rgba(205,180,255,.8))}
+.letter{font-size:1.1rem;text-align:left}.letter p+p{margin-top:14px}
+#letter{outline:none;border-radius:12px;padding:6px}#letter:focus{background:rgba(255,255,255,.5)}
+
+/* 10. Finale */
+.finale{min-height:100vh;background:radial-gradient(circle,var(--plum),#2d1235);color:#fff;width:100%}
+.mega{font:clamp(2.2rem,8vw,5.5rem)/1.1 var(--display);font-weight:800;color:var(--butter);text-shadow:0 0 30px var(--pink)}
+.foot{position:relative;z-index:2;text-align:center;padding:20px;font-size:.9rem}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:480px){.cake{transform:scale(.85)}.glow-btn{width:100%}}

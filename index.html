@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mishal.exe Has Survived Another Year! 🎂</title>
+<meta name="description" content="A birthday surprise, with extra chaos.">
+<!-- Emoji favicon: no image file needed, so no broken paths -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+<!-- Fonts: optional Google Fonts; site falls back to system fonts offline -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;800&family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div id="floaters" aria-hidden="true"></div>
+
+<!-- Music control (never autoplays) -->
+<button id="musicBtn" class="glow-btn small" aria-pressed="false">🎵 Play music</button>
+
+<main id="main">
+<!-- 2. HERO -->
+<section id="hero" class="section hero">
+  <p class="breaking">🚨 BREAKING NEWS 🚨</p>
+  <h1 class="headline">ONE MOER PROBLEM FOR THIS PLANET WAS BORN TODAY!</h1>
+  <p class="sub">Unfortunately for the rest of us, she has decided to continue existing for another year. 💅😂</p>
+  <p class="name" id="heroName">Mishasl</p>
+  <div class="btn-row">
+    <button id="openBtn" class="glow-btn">Open Your Birthday Surprise 🎁</button>
+    <button id="fabBtn" class="glow-btn alt">I’m Too Fabulous for This 😎</button>
+  </div>
+  <p id="fabMsg" class="fab-msg" role="status" aria-live="polite"></p>
+</section>
+
+<div id="surprise" hidden>
+<!-- 3. ROAST -->
+<section class="section" id="review">
+  <h2>Your Annual Performance Review 😂</h2>
+  <div class="cards">
+    <article class="card tilt"><span class="emo">🎭</span><h3>Drama Level</h3><p class="score">1000/10</p></article>
+    <article class="card tilt"><span class="emo">🏆</span><h3>Ability to Annoy Me</h3><p class="score">Legendary</p></article>
+    <article class="card tilt"><span class="emo">💅</span><h3>Borrowing My Stuff</h3><p class="score">Professional Thief</p></article>
+    <article class="card tilt"><span class="emo">😭</span><h3>Emotional Blackmail Skills</h3><p class="score">CEO Level</p></article>
+    <article class="card tilt"><span class="emo">✨</span><h3>Beauty</h3><p class="score">Unfortunately, Unmatched</p></article>
+    <article class="card tilt"><span class="emo">💗</span><h3>Being My Sister</h3><p class="score">Her Greatest Achievement</p></article>
+  </div>
+  <p class="stamp">This report is 100% accurate and cannot be appealed.</p>
+</section>
+
+<!-- 4. CAKE -->
+<section class="section" id="cakeSec">
+  <h2>Make a Wish, Birthday Girl! 🎂</h2>
+  <p class="hint">Click each candle to blow it out (or use the buttons).</p>
+  <div class="cake" id="cake">
+    <div class="candles" id="candles"></div>
+    <div class="tier t3"></div><div class="tier t2"></div><div class="tier t1"></div><div class="plate"></div>
+  </div>
+  <div class="btn-row">
+    <button id="blowBtn" class="glow-btn">Blow Them All Out 💨</button>
+    <button id="micBtn" class="glow-btn alt">Use Microphone 🎤</button>
+    <button id="relightBtn" class="glow-btn alt" hidden>Relight 🔥</button>
+  </div>
+  <p id="wishMsg" class="wish" role="status" aria-live="polite"></p>
+</section>
+
+<!-- 5. QUIZ -->
+<section class="section" id="quizSec">
+  <h2>How Well Do You Know Your Favorite Sibling? 🤣</h2>
+  <div class="glass quiz" id="quiz" aria-live="polite"></div>
+</section>
+
+<!-- 6. FAKE GIFT -->
+<section class="section" id="giftSec">
+  <h2>A Mysterious Present 🎁</h2>
+  <div class="gift" id="gift"><div class="lid"></div><div class="box"></div><div class="prize" id="prize"></div></div>
+  <button id="giftBtn" class="glow-btn">Claim Your Extremely Expensive Gift</button>
+</section>
+
+<!-- 7. GALLERY (photos configured in script.js) -->
+<section class="section" id="gallery">
+  <h2>Silly photo Gallery 📸</h2>
+  <div class="grid" id="grid"></div>
+</section>
+
+<!-- 8. EMOTIONAL TWIST -->
+<!-- 8. THE FINAL MESSAGE (edit the text inside #letter any time) -->
+<section class="section soft" id="heart">
+  <h2>Okay, Jokes Aside... ❤️</h2>
+  <div class="glass letter">
+    <div id="letter" contenteditable="true" spellcheck="true" aria-label="Editable birthday message">
+      <p><strong>🎂🎀 HAPPY BIRTHDAY TO THE HEADACHE! 🎀🎂</strong></p>
+
+      <p>Happy Birthday to the drama queen who eats my food, steals my stuff, annoys me 24/7, and still has the audacity to act like she's the innocent one. 😭💀</p>
+
+      <p>Honestly, you're lucky to have me as your sister because <strong>I'M THE BEST GIFT YOU EVER GOT.</strong> 🎁😌💅🏻 Like, forget the birthday cake, forget the presents… <strong>MY EXISTENCE</strong> is your biggest blessing. You're welcome. 😂👑</p>
+
+      <p>May your life be full of happiness, success, love, money, and enough brain cells to make better decisions this year. 🤡🙏🏻</p>
+
+      <p>No matter how annoying, dramatic, and impossible you are, you're still my favorite human to bully for the rest of my life. 😭💗</p>
+
+      <p>Never change… actually, change a little. You're getting on my nerves. 💀😂</p>
+
+      <p><strong>HAPPY BIRTHDAY, YOU LITTLE MENACE! 🎂💕</strong></p>
+
+      <p><em>P.S. Don't forget to thank Mom and Dad for giving you a sister as amazing as me. You're welcome AGAIN. 😌💋</em></p>
+    </div>
+  </div>
+  <button id="finalBtn" class="glow-btn">One Last Thing... 👑</button>
+</section>
+
+<!-- 9. FINALE -->
+<section class="section finale" id="finale" hidden>
+  <h2 class="mega">HAPPY BIRTHDAY, <span id="finalName">Mishasl Mazhar</span>! 👑🎂</h2>
+  <div class="cake mini glowing"><div class="candles"><div class="candle lit"><i></i></div><div class="candle lit"><i></i></div><div class="candle lit"><i></i></div></div><div class="tier t3"></div><div class="tier t2"></div><div class="tier t1"></div><div class="plate"></div></div>
+  <button id="replayBtn" class="glow-btn">Replay My Birthday Madness 🔁</button>
+</section>
+</div>
+</main>
+<footer class="foot">Made with love, sarcasm and way too much glitter 💗</footer>
+<script src="script.js"></script>
+</body>
+</html>
