@@ -1,8 +1,8 @@
 /* ===== Sister.exe — script.js (vanilla JS, no dependencies) ===== */
 
 /* ---------- 1. EASY CUSTOMIZATION ---------- */
-const FULL_NAME  = "Mishasl Mazhar";           // used on the finale screen
-const FIRST_NAME = "Mishasl";                  // used in the hero
+const FULL_NAME  = "Mishal Mazhar";           // used on the finale screen
+const FIRST_NAME = "Mishal";                  // used in the hero
 // To use real photos: put images in an "images" folder and set src, e.g. "images/us1.jpg".
 // Leave src empty ("") to show a cute placeholder.
 const PHOTOS = [
